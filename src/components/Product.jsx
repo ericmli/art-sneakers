@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { AddShoppingCart, FavoriteBorder, Search } from "@material-ui/icons"
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
     flex:1;
@@ -23,6 +24,7 @@ const Image = styled.img`
 	-webkit-transform: scale(1.1);
 	transform: scale(1.5);
     transition: 0.4s;  };
+    cursor: pointer;
 `
 const Info = styled.div`
     z-index:1;
@@ -48,6 +50,8 @@ const Icon = styled.div`
         background: #f5f2f2ed ;
         transform: scale(1.1);
     }
+    text-decoration: none;
+    color: black;
 `
 
 
@@ -61,9 +65,9 @@ const Producte = ({ item }) => {
                 <Icon >
                     <AddShoppingCart />
                 </Icon>
-                <Icon>
-                    <Search />
-                </Icon>
+                <Link to="/product"><Icon>
+                    <Search/>
+                </Icon></Link>
                 <Icon>
                         <FavoriteBorder />
                 </Icon>

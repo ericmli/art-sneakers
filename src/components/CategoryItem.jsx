@@ -1,18 +1,26 @@
+import React from "react"
 import styled from "styled-components"
+import { mobile } from "../responsive"
 
 const Container = styled.div`
     flex:1;
     margin: 3px;
     height: 60%;
     position: relative;
+    ${mobile({
+    height: "50vh"
     
+  })}
 `
 
 const Image = styled.img`
     width: 100%;
     height: 80%;
-    object-fit: contain;
+    object-fit: cover;
     background: #e5ece9;
+    ${mobile({
+    height: "50vh",
+  })}
 `
 
 const Inf = styled.div`
@@ -25,6 +33,7 @@ const Inf = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: end;
+   
 `
 
 const Title = styled.h1`

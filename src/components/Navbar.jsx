@@ -1,26 +1,37 @@
 import { Badge } from '@material-ui/core'
 import { Search, ShoppingCartOutlined } from '@material-ui/icons'
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import {mobile} from "../responsive"
 
 const Container = styled.div`
   height: 60px;
-
+  ${mobile({
+    height: "50px"
+  })}
 `
 
 const Wrapper = styled.div`
   padding: 10px 20px;
   display : flex ;
   justify-content: space-between;
+  ${mobile({
+    padding: "10px"
+  })}
 `
 const Left = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
+  margin-left: -10px;
 `
 const Language = styled.span`
   font-size: 14px;
   cursor: pointer;
+  ${mobile({
+    display: "none"
+  })}
 `
 const SearchContainer = styled.div`
     border: 0.5px solid lightgray;
@@ -32,10 +43,17 @@ const SearchContainer = styled.div`
 
 const Input = styled.input`
     border: none;
+    ${mobile({
+    width: "50px"
+  })}
 `
 
 const Logo = styled.h1`
   font-weight: bold ;
+  color: black;
+  ${mobile({
+    fontSize: "20px"
+  })}
 `
 
 const Center = styled.div`
@@ -48,12 +66,22 @@ const Right = styled.div`
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    ${mobile({
+    flex:2 ,justifyContent: "center"
+  })}
 `
 
 const MenuItem = styled.div`
   font-size: 14px;
   cursor: pointer;
   margin-left: 25px;
+  ${mobile({
+    fontSize: "12px", marginLeft:"10px"
+  })}
+`
+const ColorCart = styled.span`
+  color: black;
+
 `
 
 const Navbar = () => {
@@ -65,22 +93,23 @@ const Navbar = () => {
         <Left>
           <Language>EN</Language>
           <SearchContainer>
-            <Input />
-            <Search  style={{color:"Gray", fontSize:16}}/>
+            <Input placeholder="Search"/>
+            <Search style={{ color: "Gray", fontSize: 16 }} />
           </SearchContainer>
         </Left>
 
         <Center>
-          <Logo>artSNEAKERS.</Logo>
+          <Link to="/"><Logo>artSNEAKERS.</Logo></Link>
         </Center>
 
         <Right>
           <MenuItem>REGISTER</MenuItem>
           <MenuItem>SIGN IN</MenuItem>
           <MenuItem>
-            <Badge badgeContent={4} color="primary">
-              <ShoppingCartOutlined/>
+            <Link to="/cart"><Badge badgeContent={4} color="primary">
+              <ColorCart><ShoppingCartOutlined /></ColorCart>
             </Badge>
+            </Link>
           </MenuItem>
         </Right>
 

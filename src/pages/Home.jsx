@@ -5,16 +5,18 @@ import Navbar from '../components/Navbar'
 import Slider from '../components/Slider'
 import Products from '../components/Products'
 import Newsletter from '../components/Newsletter'
+import { Footer } from '../components/Footer'
 
-function Home() {
+export const Home = ()=> {
   return (
     <div>
-        <Announcement/>
-        <Navbar/>
-        <Slider/>
-        <Categories/>
-        <Products/>
-        <Newsletter/>
+        <Announcement />
+        <Navbar />
+        <Slider />
+        <Categories />
+        <Products />
+        <Newsletter />
+        <Footer />
     </div>
   )
 }

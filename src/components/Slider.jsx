@@ -2,6 +2,9 @@ import styled from "styled-components"
 import { ArrowBackOutlined, ArrowForwardOutlined } from '@material-ui/icons'
 import { useState } from "react"
 import sliderItems from "../data"
+import { Link } from "react-router-dom";
+import { mobile } from "../responsive";
+
 
 const Container = styled.div`
     width: 100%;
@@ -10,7 +13,9 @@ const Container = styled.div`
     background: coral;
     position: relative;
     overflow: hidden;
-    
+    ${mobile({
+    display: "none"
+  })}
 `
 
 const Arrow = styled.div`
@@ -24,8 +29,8 @@ const Arrow = styled.div`
     position: absolute;
     top:0;
     bottom:0;
-    left: ${props => props.direction === "left" && "10px"};
-    right: ${props => props.direction === "right" && "10px"};
+    left: ${props => props.direction === "left" && "1%"};
+    right: ${props => props.direction === "right" && "1%"};
     margin: auto;
     cursor: pointer;
     
@@ -102,7 +107,9 @@ const Slider = () => {
             <Arrow direction="left" onClick={() => handleClick("left")}>
                 <ArrowBackOutlined />
             </Arrow>
-
+            <Arrow direction="right" onClick={() => handleClick("right")}>
+                <ArrowForwardOutlined />
+            </Arrow>
             <Wrapper slideIndex={slideIndex}>
                 {sliderItems.map(item => (
                     <Slide bg={item.bg} key={item.id}>
@@ -112,15 +119,13 @@ const Slider = () => {
                         <InfoContainer>
                             <Title>{item.title}</Title>
                             <Desc clr={item.clr}>{item.desc}</Desc>
-                            <Button>SHOW NOW</Button>
+                            <Link to="/products"><Button>SHOW NOW</Button></Link>
                         </InfoContainer>
                     </Slide>
                 ))}
             </Wrapper>
 
-            <Arrow direction="right" onClick={() => handleClick("right")}>
-                <ArrowForwardOutlined />
-            </Arrow>
+
         </Container>
     )
 }

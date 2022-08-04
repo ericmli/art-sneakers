@@ -100,4 +100,19 @@ export const popularProducts = [
 
 ]
 
+export const  cardIcons = [
+    {
+        img: "https://images.lojanike.com.br/site/ni/icones/mastercard.svg",
+    },
+    {
+        img: "https://images.lojanike.com.br/site/ni/icones/visa.svgg",
+    },
+    {
+        img: "https://images.lojanike.com.br/site/ni/icones/elo.svg",
+    },
+    {
+        img: "https://images.lojanike.com.br/site/ni/icones/boleto.svg",
+    },
+]
+
 export default sliderItems

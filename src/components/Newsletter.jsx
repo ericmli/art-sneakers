@@ -1,9 +1,10 @@
 import { Send } from "@material-ui/icons"
 import styled from "styled-components"
+import { mobile } from "../responsive"
 
 const Container = styled.div`
     height: 60vh;
-    background: #fcf5f5;
+    background: #00000010;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -17,7 +18,9 @@ const Desc = styled.div`
     font-size: 24px;
     font-weight: 300;
     margin-bottom: 20px;
-    
+    ${mobile({
+    textAlign: "center",
+  })}
 `
 const InputContainer = styled.div`
     width: 50%;
@@ -26,6 +29,9 @@ const InputContainer = styled.div`
     display: flex;
     justify-content: space-between;
     border: 1px solid lightgray;
+    ${mobile({
+    width: "80%",
+  })}
 `
 const Input = styled.input`
     border: none;
@@ -43,11 +49,11 @@ const Newsletter = () => {
     return (
         <Container>
             <Title>News in the area</Title>
-            <Desc>SUBSCRIBE FOR NEWS</Desc>
+            <Desc>Sign up and receive a 15% coupon by email for your 1st purchase.</Desc>
             <InputContainer>
                 <Input placeholder="Your e-mail" />
                 <Button>
-                    <Send/>
+                    <Send />
                 </Button>
             </InputContainer>
         </Container>
