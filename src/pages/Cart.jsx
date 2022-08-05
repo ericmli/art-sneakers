@@ -15,7 +15,7 @@ const Wrapper = styled.div`
   })}
 `
 const Title = styled.h1`
-    
+    border-radius: 20px;
     font-weight: 300;
     text-align: center;
     background: #9e989833;
@@ -78,6 +78,9 @@ const ProductDetail = styled.div`
 
 const Image = styled.img`
     width: 300px;
+    ${mobile({
+    width:"50%",
+  })}
 `
 
 const Details = styled.div`

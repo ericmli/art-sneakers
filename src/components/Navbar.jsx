@@ -8,7 +8,8 @@ import {mobile} from "../responsive"
 const Container = styled.div`
   height: 60px;
   ${mobile({
-    height: "50px"
+    height: "50px",
+    
   })}
 `
 
@@ -17,7 +18,7 @@ const Wrapper = styled.div`
   display : flex ;
   justify-content: space-between;
   ${mobile({
-    padding: "10px"
+    padding: "10px",position: "relative", left:"0",
   })}
 `
 const Left = styled.div`
@@ -39,6 +40,9 @@ const SearchContainer = styled.div`
     align-items: center;
     margin-left: 25px;
     padding: 5px;
+    ${mobile({
+    display: "none"
+  })}
 `
 
 const Input = styled.input`
@@ -51,9 +55,7 @@ const Input = styled.input`
 const Logo = styled.h1`
   font-weight: bold ;
   color: black;
-  ${mobile({
-    fontSize: "20px"
-  })}
+  
 `
 
 const Center = styled.div`
@@ -76,7 +78,7 @@ const MenuItem = styled.div`
   cursor: pointer;
   margin-left: 25px;
   ${mobile({
-    fontSize: "12px", marginLeft:"10px"
+    fontSize: "12px", 
   })}
 `
 const ColorCart = styled.span`
