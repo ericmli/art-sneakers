@@ -18,7 +18,7 @@ const Wrapper = styled.div`
   display : flex ;
   justify-content: space-between;
   ${mobile({
-    padding: "10px",position: "relative", left:"0",
+    padding: "15px",position: "relative", left:"0",
   })}
 `
 const Left = styled.div`
@@ -26,6 +26,9 @@ const Left = styled.div`
   display: flex;
   align-items: center;
   margin-left: -10px;
+  ${mobile({
+    display: "none"
+  })}
 `
 const Language = styled.span`
   font-size: 14px;
@@ -55,7 +58,9 @@ const Input = styled.input`
 const Logo = styled.h1`
   font-weight: bold ;
   color: black;
-  
+  ${mobile({
+    fontSize:"20px"
+  })}
 `
 
 const Center = styled.div`
@@ -69,7 +74,7 @@ const Right = styled.div`
     align-items: center;
     justify-content: flex-end;
     ${mobile({
-    flex:2 ,justifyContent: "center"
+    flex:2 ,justifyContent: "end"
   })}
 `
 
